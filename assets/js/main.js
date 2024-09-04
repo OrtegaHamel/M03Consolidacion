@@ -2,7 +2,6 @@ function Producto(id, nombre, precio) {
     this.id = Number(id);
     this.nombre = nombre;
     this.precio = Number(precio);
-
 }
 
 
@@ -56,12 +55,12 @@ const productosDisponibles = [
     new Producto(5, "Azúcar", 1300)
 ];
 
-var carrito = new Carrito();
+const carrito = new Carrito();
 
 function Comprar() {
     carrito.mostrarListado();
 
-    var elegirProducto = parseInt(prompt("Ingresa el número de producto que deseas agregar al carrito:")) - 1;
+    const elegirProducto = parseInt(prompt("Ingresa el número de producto que deseas agregar al carrito:")) - 1;
 
     if (!productosDisponibles[elegirProducto]) {
         alert("Opción inválida");
@@ -82,7 +81,7 @@ function Comprar() {
             if (seguirAgregando.toLowerCase() === "s") {
                 Comprar();
             } else {
-                if (seguirAgregando.toLowerCase() == "n") {
+                if (seguirAgregando.toLowerCase() === "n") {
                     carrito.finalizarCompra();
                 } else {
                     alert("Debes escoger una opción válida");
